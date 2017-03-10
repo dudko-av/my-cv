@@ -19,7 +19,7 @@ export class CvEditComponent extends CommonController implements OnInit {
   ) { super(); }
 
   ngOnInit() {
-    this.cv = this.af.database.object('/oleksandr-dudko-cv');
+    this.cv = this.af.database.object('/cv');
     this.cv.takeUntil(this.unsubscribeOnDestroy).subscribe(val => {
       debugger
     }, err => {
@@ -27,6 +27,7 @@ export class CvEditComponent extends CommonController implements OnInit {
     }, () => {
       debugger
     });
+    this.createForm();
   }
 
   private createForm() {
@@ -37,6 +38,7 @@ export class CvEditComponent extends CommonController implements OnInit {
 
   save() {
     debugger
+    this.cv.set(this.cvForm.value);
   }
 
 }

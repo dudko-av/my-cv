@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 //
@@ -21,6 +22,7 @@ export const firebaseConfig = {
 @NgModule({
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     MaterialModule,
     RouterModule.forChild([
       { path: 'login', component: LoginComponent },

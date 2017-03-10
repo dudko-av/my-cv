@@ -1,10 +1,10 @@
-<div class="mdl-grid">
+<form class="mdl-grid" [formGroup]="cvForm">
   <div class="mdl-cell">
     <md-input-container>
       <input mdInput formControlName="avatar">
     </md-input-container>
   </div>
-</div>
+</form>
 <div>
   <button md-raised-button color="primary" (click)="save()">Save</button>
 </div>
