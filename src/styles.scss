@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/core/theming/prebuilt/indigo-pink.css";
+@import "~material-design-lite/material.min.css";
+@import "./app/app.theme";
+
+body {
+  font-family: Roboto, sans-serif;
+}

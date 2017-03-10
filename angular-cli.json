@@ -18,7 +18,7 @@
       "prefix": "app",
       "mobile": false,
       "styles": [
-        "styles.css"
+        "styles.scss"
       ],
       "scripts": [],
       "environments": {
@@ -46,7 +46,7 @@
       "template": false
     },
     "spec": {
-      "class": false,
+      "class": true,
       "component": true,
       "directive": true,
       "module": false,

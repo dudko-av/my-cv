@@ -2,11 +2,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { AngularFireModule } from 'angularfire2';
+import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 import { TranslateModule } from 'ng2-translate';
 import { MaterialModule } from '@angular/material';
-
+//
 import { AppComponent } from './app.component';
+//
+import { AppRoutesModule } from './app.routes.module';
+import { LayoutModule } from './layout/layout.module';
+import { CvModule } from './cv/cv.module';
 
 // Must export the config
 export const firebaseConfig = {
@@ -25,9 +29,16 @@ export const firebaseConfig = {
     BrowserModule,
     FormsModule, ReactiveFormsModule,
     HttpModule,
-    AngularFireModule.initializeApp(firebaseConfig),
+    AppRoutesModule,
+    AngularFireModule.initializeApp(firebaseConfig, {
+      provider: AuthProviders.Google,
+      method: AuthMethods.Redirect
+    }),
     TranslateModule.forRoot(),
-    MaterialModule
+    MaterialModule,
+    //
+    LayoutModule,
+    CvModule
   ],
   providers: [],
   bootstrap: [AppComponent]
