@@ -3,6 +3,7 @@ import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { CommonController } from '../../shared/common-controller/common-controller';
 import 'rxjs/add/operator/takeUntil';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cv-edit',
@@ -14,6 +15,7 @@ export class CvEditComponent extends CommonController implements OnInit {
   cvForm: FormGroup;
 
   constructor(
+    private router: Router,
     private fb: FormBuilder,
     private af: AngularFire
   ) { super(); }
@@ -39,6 +41,7 @@ export class CvEditComponent extends CommonController implements OnInit {
   save() {
     debugger
     this.cv.set(this.cvForm.value);
+    this.router.navigate(['/cv']);
   }
 
 }
