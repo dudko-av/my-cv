@@ -1,5 +1,6 @@
 <div class="mdl-grid">
-  <div class="mdl-cell mdl-cell--4-col">Content</div>
-  <div class="mdl-cell mdl-cell--4-col">goes</div>
-  <div class="mdl-cell mdl-cell--4-col">here</div>
+  <div class="mdl-cell mdl-cell--3-col">
+    <img class="avatar" *ngIf="(cv | async)?.avatar" [src]="(cv | async).avatar">
+  </div>
+  <div class="mdl-cell mdl-cell--9-col">goes</div>
 </div>

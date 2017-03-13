@@ -16,11 +16,9 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.af.auth.subscribe(auth => {
-      debugger
+    this.af.auth.filter(auth => !auth).subscribe(auth => {
+      this.af.auth.login();
     });
-    debugger
-    // this.af.auth.login();
   }
 
 }

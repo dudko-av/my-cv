@@ -5,6 +5,7 @@ export class CommonController implements OnDestroy {
   unsubscribeOnDestroy = new Subject();
 
   ngOnDestroy() {
+    this.unsubscribeOnDestroy.next(null);
     this.unsubscribeOnDestroy.complete();
     this.unsubscribeOnDestroy = null;
   }

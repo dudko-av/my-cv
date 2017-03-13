@@ -24,6 +24,7 @@ export class CvEditComponent extends CommonController implements OnInit {
     this.cv = this.af.database.object('/cv');
     this.cv.takeUntil(this.unsubscribeOnDestroy).subscribe(val => {
       debugger
+      this.cvForm.reset(val);
     }, err => {
       debugger
     }, () => {
